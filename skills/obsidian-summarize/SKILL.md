@@ -24,11 +24,15 @@ Vault and path are configurable via environment variables:
    - Slug summarizes the session work. Lowercase kebab-case.
    - Example: `2026-05-11_otis_ha-delivery-loop-llm-abstraction.md`
 
-4. **Create the note** using the `obsidian:obsidian-cli` skill:
+4. **Create the note** using the `obsidian:obsidian-cli` skill. Write content to a temp file first to avoid shell interpretation of backticks and special characters, then pass it to obsidian:
    ```bash
-   obsidian vault="${OBSIDIAN_VAULT:-Second Brain}" create name="YYYY-MM-DD_project_slug" path="${OBSIDIAN_NOTES_PATH:-Coding Sessions}/YYYY-MM-DD_project_slug.md" content="<note content>" silent
+   cat > /tmp/obsidian_note.md << 'NOTEEOF'
+   <full note content here>
+   NOTEEOF
+   obsidian vault="${OBSIDIAN_VAULT:-Second Brain}" create name="YYYY-MM-DD_project_slug" path="${OBSIDIAN_NOTES_PATH:-Coding Sessions}/YYYY-MM-DD_project_slug.md" content="$(cat /tmp/obsidian_note.md)" silent
+   rm /tmp/obsidian_note.md
    ```
-   Use `\n` for newlines in the content string. Follow `obsidian:obsidian-markdown` for correct Obsidian Flavored Markdown syntax.
+   Follow `obsidian:obsidian-markdown` for correct Obsidian Flavored Markdown syntax.
 
 5. **Report back**: confirm the filename and that the note was written.
 
