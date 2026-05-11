@@ -7,6 +7,7 @@ Personal agent skills following the [Agent Skills specification](https://agentsk
 | Skill | Description |
 |-------|-------------|
 | [obsidian-summarize](skills/obsidian-summarize) | Write a coding session note to an Obsidian vault. Requires the [obsidian-skills](https://github.com/kepano/obsidian-skills) plugin. |
+| [obsidian-load-context](skills/obsidian-load-context) | Load context from recent session notes at the start of a session. Requires the [obsidian-skills](https://github.com/kepano/obsidian-skills) plugin. |
 
 ## Installation
 
