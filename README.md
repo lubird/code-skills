@@ -12,17 +12,17 @@ Personal agent skills following the [Agent Skills specification](https://agentsk
 
 ### Claude Code
 ```
-/plugin marketplace add kellylu/code-skills
+/plugin marketplace add lubird/code-skills
 ```
 
 ### Codex CLI
 ```
-npx skills add https://github.com/kellylu/code-skills
+npx skills add https://github.com/lubird/code-skills
 ```
 
 ### OpenCode
 ```sh
-git clone https://github.com/kellylu/code-skills.git ~/.opencode/skills/code-skills
+git clone https://github.com/lubird/code-skills.git ~/.opencode/skills/code-skills
 ```
 
 ## Dependencies
