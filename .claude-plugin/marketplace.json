@@ -1,0 +1,15 @@
+{
+  "name": "code-skills",
+  "owner": {
+    "name": "Kelly Lu",
+    "url": "https://github.com/lubird"
+  },
+  "plugins": [
+    {
+      "name": "lubird",
+      "source": "./",
+      "description": "Personal agent skills by lubird",
+      "version": "1.0.0"
+    }
+  ]
+}

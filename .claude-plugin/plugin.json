@@ -1,0 +1,16 @@
+{
+  "name": "lubird",
+  "version": "1.0.0",
+  "description": "Personal agent skills. Includes obsidian-summarize for writing Obsidian session notes.",
+  "author": {
+    "name": "Kelly Lu",
+    "url": "https://github.com/lubird"
+  },
+  "repository": "https://github.com/lubird/code-skills",
+  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "notes",
+    "session"
+  ]
+}
