@@ -4,9 +4,11 @@ description: Write a coding session note to an Obsidian vault summarizing work d
 allowed-tools: Bash(date:*) Bash(git log:*) Bash(git rev-parse:*) Bash(basename:*) Bash(obsidian:*)
 ---
 
-Write a session note for the current coding project to the "Second Brain" Obsidian vault using the `obsidian:obsidian-cli` and `obsidian:obsidian-markdown` skills.
+Write a session note for the current coding project to an Obsidian vault using the `obsidian:obsidian-cli` and `obsidian:obsidian-markdown` skills.
 
-> To use a different vault, replace "Second Brain" with your vault name.
+Vault and path are configurable via environment variables:
+- `OBSIDIAN_VAULT` — vault name (default: `Second Brain`)
+- `OBSIDIAN_NOTES_PATH` — folder path within the vault (default: `Coding Sessions`)
 
 ## Steps
 
@@ -24,7 +26,7 @@ Write a session note for the current coding project to the "Second Brain" Obsidi
 
 4. **Create the note** using the `obsidian:obsidian-cli` skill:
    ```bash
-   obsidian vault="Second Brain" create name="YYYY-MM-DD_project_slug" path="Coding Sessions/YYYY-MM-DD_project_slug.md" content="<note content>" silent
+   obsidian vault="${OBSIDIAN_VAULT:-Second Brain}" create name="YYYY-MM-DD_project_slug" path="${OBSIDIAN_NOTES_PATH:-Coding Sessions}/YYYY-MM-DD_project_slug.md" content="<note content>" silent
    ```
    Use `\n` for newlines in the content string. Follow `obsidian:obsidian-markdown` for correct Obsidian Flavored Markdown syntax.
 
