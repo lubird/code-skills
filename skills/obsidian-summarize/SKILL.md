@@ -22,6 +22,10 @@ Configuration precedence:
 2. Environment variables: `OBSIDIAN_VAULT`, `OBSIDIAN_NOTES_PATH`
 3. Defaults: vault `Second Brain`, notes path `Coding Sessions`
 
+## Obsidian CLI access
+
+In sandboxed agents, `obsidian` may report `The CLI is unable to find Obsidian` even when Obsidian is running because the sandbox cannot access the Obsidian CLI Unix socket. If that happens, retry the same `obsidian` command outside the sandbox/escalated before concluding Obsidian is closed. Only fall back to direct filesystem writes if the escalated CLI command also fails or the user explicitly approves the fallback.
+
 ## Steps
 
 1. **Gather context** using Bash:

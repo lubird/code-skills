@@ -47,6 +47,8 @@ Configuration precedence:
 | `OBSIDIAN_VAULT`, `OBSIDIAN_NOTES_PATH` | Optional environment variable fallback |
 | Defaults | Vault `Second Brain`, path `Coding Sessions` |
 
+In sandboxed agents, the Obsidian CLI may need to run outside the sandbox to reach Obsidian's local CLI socket.
+
 Example for an Otis project:
 
 ```json
