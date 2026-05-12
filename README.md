@@ -28,19 +28,32 @@ git clone https://github.com/lubird/code-skills.git ~/.opencode/skills/code-skil
 
 ## Configuration
 
-`obsidian-summarize` is configured via environment variables:
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `OBSIDIAN_VAULT` | `Second Brain` | Obsidian vault name |
-| `OBSIDIAN_NOTES_PATH` | `Coding Sessions` | Folder path within the vault |
-
-Set these per project in your tool's project settings. For Claude Code, add to `.claude/settings.json`:
+`obsidian-summarize` and `obsidian-load-context` are configured with a project-local `.agents/code-skills.json` file at the git root:
 
 ```json
 {
-  "env": {
-    "OBSIDIAN_NOTES_PATH": "Projects/MyProject"
+  "obsidian": {
+    "vault": "Second Brain",
+    "notesPath": "Projects/MyProject"
+  }
+}
+```
+
+Configuration precedence:
+
+| Source | Description |
+|--------|-------------|
+| `.agents/code-skills.json` | Preferred per-project configuration |
+| `OBSIDIAN_VAULT`, `OBSIDIAN_NOTES_PATH` | Optional environment variable fallback |
+| Defaults | Vault `Second Brain`, path `Coding Sessions` |
+
+Example for an Otis project:
+
+```json
+{
+  "obsidian": {
+    "vault": "Second Brain",
+    "notesPath": "Projects/Otis"
   }
 }
 ```
